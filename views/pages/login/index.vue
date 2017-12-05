@@ -2,11 +2,12 @@
   <div class="em-index">
     <transition name="zoom">
       <div class="em-index__login" v-if="page === 0">
-        <img src="/public/images/easy-mock.png">
+        <!--<img src="/public/images/easy-mock.png">-->
+        <p>汇通达 Easy-Mock</p>
         <p>{{$tc('p.login.description', 1)}}</p>
         <p>{{$tc('p.login.description', 2)}}</p>
         <transition name="fadeUp" mode="out-in">
-          <i-button type="primary" long @click.stop="start" v-if="!isLogin" key="start">{{$tc('p.login.form.button', 1)}}</i-button>
+          <i-button type="primary" class="htd-login-btn" long @click.stop="start" v-if="!isLogin" key="start">{{$tc('p.login.form.button', 1)}}</i-button>
           <i-button type="success" long @click.stop="login" v-else key="login">{{$tc('p.login.form.button', 2)}}</i-button>
         </transition>
         <transition name="fadeLeft">
@@ -26,7 +27,7 @@
       :class="{'is-old': page > 0}">
       <transition name="fade">
         <div
-          class="fullscreen"
+          class="fullscreen htd-bg"
           :class="{'is-login': isLogin}"
           ref="wallpaper"
           v-show="wallpaperVisible"></div>
@@ -38,7 +39,8 @@
         <p v-if="copyright">{{copyright}}</p>
       </div>
       <transition name="fade">
-        <div class="fullscreen-by" v-if="wallpaperCopyright">
+        <div class="fullscreen-by" v-if="wallpaperCopyright">代码维护:前端组</div>
+        <!--<div class="fullscreen-by" v-if="wallpaperCopyright">
           <div v-if="wallpaperCopyright.name === 'Bing'">
             Photo by
             <a :href="wallpaperCopyright.link" target="_blank">
@@ -58,7 +60,7 @@
               <img :src="wallpaperCopyright.profileImage">
             </a>
           </div>
-        </div>
+        </div>-->
       </transition>
       <div class="about-btn" @click="page = 1">{{$tc('p.login.about', 1)}}</div>
     </div>

@@ -3,6 +3,10 @@
 @c index {
   color: #fff;
 
+  .htd-bg{
+    background:url('/public/img/htd-bg.jpg') 50% 50% / cover !important;
+  }
+
   @d pagination {
     left: 40px;
     position: absolute;
